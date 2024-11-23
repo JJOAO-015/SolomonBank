@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="css/Esqueceu a senha.css">
     <link rel="shortcut icon" href="/midia/favicon.ico" type="image/x-icon">
     <title>Redefinir senha</title>
-    <script type="module" src="script.js"></script>
 </head>
 <body>
     <header class="menu">
@@ -15,14 +14,14 @@
         </div>
         <div class="cabecalho_menu">
             <nav class="cabecalho__menu__link">
-                <a class="link" href="">QUEM SOMOS?</a>
-                <a class="link" href="">PARA VOCÊ</a>
+                <a class="link" href="quemsomos.html">QUEM SOMOS?</a>
+                <a class="link" href="paravoce.html">PARA VOCÊ</a>
 
             </nav>
         </div>
         <div class="botoes">
-           <a class="botao_1" href="index1.html">ABRIR CONTA</a>
-           <a class="botao_2" href="">ACESSAR</a>
+           <a class="botao_1" href="Cadastro.html">ABRIR CONTA</a>
+           <a class="botao_2" href="Login.html">ACESSAR</a>
         </div>
     </header>
 
@@ -42,12 +41,12 @@
 
             <div class="inputText">
               <label for="name"></label>
-              <input type="number" id="name" placeholder="CPF" />
+              <input type="text" id="email" placeholder="Email" />
             </div>
 
             <div class="inputText">
                 <label for="name"></label>
-                <input type="number" id="name"  placeholder="Data de nascimento"/>
+                <input type="date" id="name"  placeholder="Data de nascimento"/>
               </div>
 
               <div class="inputText">
@@ -58,8 +57,8 @@
 
            
             <div class="button">
-                <button type="submit">Redefinir senha</button>
-              </div>
+                <button type="button" id="resetPasswordBtn">Redefinir senha</button>
+            </div>
 
         </form>
 
@@ -131,6 +130,6 @@
     
     
     </div> 
-<script type="text/javascript" src="script.js"></script>
+    <script type="module" src="recuperacao.js"></script>
 </body>
 </html>

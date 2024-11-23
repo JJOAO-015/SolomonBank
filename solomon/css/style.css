@@ -25,6 +25,28 @@
 
 }
 
+#welcomeMessage {
+  display: none; /* Começa oculto */
+  background-color: #f0f8ff; /* Cor de fundo leve */
+  color: #333; /* Cor do texto */
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombrinha leve */
+  text-align: center; /* Centraliza o texto */
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+}
+
+#welcomeMessage h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#welcomeMessage p {
+  font-size: 18px;
+}
+
 .link {
     text-decoration: none;
     margin-right: 2em;

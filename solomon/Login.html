@@ -19,7 +19,7 @@
             </nav>
         </div>
         <div class="botoes">
-            <a class="botao_1" href="index1.html">ABRIR CONTA</a>
+            <a class="botao_1" href="Cadastro.html">ABRIR CONTA</a>
             <a class="botao_2" href="">ACESSAR</a>
         </div>
     </header>
@@ -28,6 +28,10 @@
         <div class="cadastro">
             <h1>Acesse sua conta</h1>
             <form id="formulario-login">
+
+                <div class="inputText">
+                    <input type="text" id="nome" placeholder="Digite seu primeiro e ultimo nome" required />
+                </div>
 
                 <!-- Campo Email -->
                 <div class="inputText">
@@ -40,12 +44,14 @@
                 </div>
 
                 <!-- Link para recuperação de senha -->
-                <a class="esq-senha" href="Esqueceu-a-senha.html">Esqueceu sua senha?</a>
+                <a class="esq-senha" href="Esqueceu a senha.html">Esqueceu sua senha?</a>
 
                 <!-- Botão de Acesso -->
                 <div class="button">
                     <button type="submit">Acessar conta</button>
                 </div>
+
+          <div id="loginError" style="color: red; display: none;"></div>
 
             </form>
         </div>

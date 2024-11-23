@@ -128,7 +128,7 @@ h1 {
   margin-bottom: 2%;
 }
 
-#email, #password {
+#email, #password, #nome {
   width: 400px;
   padding: 15px;
   border-color: #00BC60;

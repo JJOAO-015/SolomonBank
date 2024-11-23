@@ -1,5 +1,4 @@
-// Importando funções do Firebase
-import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
+import { getAuth, signInWithEmailAndPassword, updateProfile } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
 
 const firebaseConfig = {
@@ -19,6 +18,7 @@ const auth = getAuth();
 // Elementos do formulário de login
 const loginForm = document.getElementById('formulario-login');
 const loginError = document.getElementById('loginError');
+const nomeInput = document.getElementById('nome');  // Campo de nome do formulário
 
 // Função de login
 loginForm.addEventListener('submit', async (e) => {
@@ -26,15 +26,25 @@ loginForm.addEventListener('submit', async (e) => {
 
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
+  const nome = nomeInput.value;  // Capturando o nome digitado
 
   try {
     // Realizando o login com o Firebase Auth
-    await signInWithEmailAndPassword(auth, email, password);
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+
+    // Caso seja a primeira vez que o usuário faz login, atualiza o nome
+    if (user && !user.displayName) {
+      await updateProfile(user, {
+        displayName: nome
+      });
+    }
 
     // Redireciona para a página principal após login
     window.location.href = 'index.html';
   } catch (error) {
     // Exibindo erro de login
     loginError.style.display = 'block';
+    loginError.textContent = "Erro ao fazer login. Verifique suas credenciais.";
   }
 });

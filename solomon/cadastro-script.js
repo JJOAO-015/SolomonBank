@@ -202,20 +202,29 @@ document.addEventListener('DOMContentLoaded', function () {
             createdAt: new Date() // Adiciona a data de criação do usuário
           });
 
-          // Exibir mensagem de sucesso
-          document.getElementById('registerSuccess').style.display = 'block';
+          // Exibir o modal de sucesso
+          const modal = document.getElementById('successModal');
+          modal.style.display = 'block';
+
+          // Fechar o modal após 3 segundos
           setTimeout(() => {
+            modal.style.display = 'none';
             window.location.href = 'Login.html';  // Redirecionar para uma página desejada
-          }, 2000);
-          
+          }, 3000);
+
         } catch (error) {
-          document.getElementById('registerSuccess').style.display = 'none'; document.getElementById('registerError').innerText = error.message; // Exibir mensagem de erro
-          document.getElementById('registerError').style.display = 'block'; // Certifique-se de ter um elemento para mostrar erros
+          document.getElementById('error-message').style.display = 'block'; // Certifique-se de ter um elemento para mostrar erros
         }
       } else {
-        document.getElementById('registerSuccess').style.display = 'none'; // Ocultar mensagem de sucesso
-        document.getElementById('registerError').style.display = 'none'; // Ocultar mensagem de erro se houver erro de validação
+        document.getElementById('success-message').style.display = 'none'; // Ocultar mensagem de sucesso
+        document.getElementById('error-message').style.display = 'none'; // Ocultar mensagem de erro se houver erro de validação
       }
     });
   }
+
+  // Fechar o modal ao clicar no "x"
+  document.getElementById('closeModal').addEventListener('click', function() {
+    const modal = document.getElementById('successModal');
+    modal.style.display = 'none';
+  });
 });
