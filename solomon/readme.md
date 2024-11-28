@@ -1,1 +1,0 @@
-É um site sobre o aplicatico SOLOMON BANK. 
